@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:get/get.dart';
 import 'package:neon_widgets/neon_widgets.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
+import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:sizer/sizer.dart';
 import 'package:test1/view/profilescreen/profilescreen.dart';
 import 'package:test1/view/utilities/colors.dart';
@@ -101,7 +103,9 @@ class homescreen extends StatelessWidget {
                       top: 5.h,
                       child: InkWell(
                           onTap: () {
-                            Get.to(() => profilescreen());
+                            Navigator.of(context).push(PageAnimationTransition(
+                                page: profilescreen(),
+                                pageAnimationType: FadeAnimationTransition()));
                           },
                           child: containersss(
                               col: Colors.transparent, txt: "PROFILE")),
@@ -152,7 +156,10 @@ class homescreen extends StatelessWidget {
                                 height: 12.h,
                                 width: 28.w,
                                 decoration: BoxDecoration(
-                                  image: DecorationImage(image: AssetImage("images/30soccer-ronaldo-1-76fd-jumbo.webp"),fit: BoxFit.cover),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            "images/30soccer-ronaldo-1-76fd-jumbo.webp"),
+                                        fit: BoxFit.cover),
                                     borderRadius: BorderRadius.circular(1.h),
                                     color: yl),
                               )),

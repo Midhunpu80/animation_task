@@ -41,6 +41,7 @@ dependencies:
   flutter_svg: ^2.0.9
   neon_widgets: ^2.0.0
   flutter_custom_clippers: ^2.1.0
+  page_animation_transition: ^1.0.0
 
 dev_dependencies:
   flutter_test:
